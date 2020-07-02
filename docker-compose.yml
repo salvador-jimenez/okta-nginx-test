@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nginx_okta:
+    command: "nginx -g 'daemon off;'"
+    image: tomsmithokta/nginx-oss-okta
+    ports:
+    - "8126:80"
+    volumes:
+    - ./logs:/var/log/nginx/
+    - ./nginx.conf:/etc/nginx/nginx.conf
